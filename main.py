@@ -33,6 +33,7 @@ def main():
     dest = os.path.join(folder, "entry.txt")
     with open(dest, "w", encoding="utf-8") as handle:
         handle.write(bio)
+    os.chmod(dest, 0o644)  # scorer must be able to read entry.txt any umask
     print(f"wrote {len(bio)} characters to {dest}")
 
 
